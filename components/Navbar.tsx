@@ -1,3 +1,8 @@
+/**
+ * Renders a user button component provided by the Clerk.js library.
+ * This component allows users to interact with their account, such as
+ * logging out or accessing their profile.
+ */
 import { UserButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";

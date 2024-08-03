@@ -4,6 +4,15 @@ import { clerkClient, WebhookEvent } from "@clerk/nextjs/server";
 import { createUser } from "@/actions/user.action";
 import { NextResponse } from "next/server";
 
+/**
+ * Handles incoming Clerk webhooks and processes user creation events.
+ *
+ * This function is the route handler for the POST request to the /api/webhooks/clerk endpoint.
+ * It verifies the incoming webhook from Clerk, extracts the user data from the event, and creates a new user in the application.
+ *
+ * @param req - The incoming HTTP request object.
+ * @returns A JSON response with a success message and the created user object.
+ */
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
@@ -50,8 +59,14 @@ export async function POST(req: Request) {
     });
   }
 
-  // Do something with the payload
-  // For this guide, you simply log the payload to the console
+  
+  /**
+   * Handles a Clerk webhook event, creating a new user in the application if the event type is "user.created".
+   *
+   * @param evt - The Clerk webhook event object.
+   * @param body - The raw webhook payload body.
+   * @returns A JSON response with a success message and the created user object, or a 400 error response if there is an issue.
+   */
   const { id } = evt.data;
   const eventType = evt.type;
 

@@ -1,3 +1,7 @@
+/**
+ * Indicates that this file is a client-side React component.
+ * This directive tells Next.js to render this component on the client-side instead of the server-side.
+ */
 "use client";
 import { useUser } from "@clerk/nextjs";
 import React from "react";
