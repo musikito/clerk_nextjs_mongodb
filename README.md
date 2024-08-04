@@ -1,4 +1,5 @@
 # Clerk_nextjs_mongodb
+![mongo and clerk](public/clerkmongo.png)
 This project is a [Next.js](https://nextjs.org/) application that integrates Clerk for authentication and MongoDB for data storage. It provides a modern, full-stack web development setup with powerful features and scalability.
 
 ## Overview
